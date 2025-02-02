@@ -40,18 +40,25 @@ hymns = main()
 
 final_PPTX = Presentation("base.pptx")
 start_time = time.time()
+
 for hymn in hymns:
     hymn_number = int(''.join(filter(str.isdigit, hymn)))
     hymn_book = ''.join(filter(str.isalpha, hymn))
     try:
         hymn_book = next(hymnBook for hymnBook in hymnBooks if hymnBook['tag'] == hymn_book)
         hymn_book_title = hymn_book['title']
-        hymn_title = hymn_book['hymns'][hymn_number-1]['title']
+        # Cambio en la búsqueda del himno
+        himno = next((h for h in hymn_book['hymns'] if h['number'] == hymn_number), None)
+        
+        if himno is None:
+            raise Exception(f"Himno {hymn_number} no encontrado")
+            
+        hymn_title = himno['title']
         print(f"[ ] Hymn book {hymn_book_title} Geting hymn {hymn_number}...")
         # ----------------- extraer coro -----------------
-        coro = hymn_book['hymns'][hymn_number-1]['chorus']
+        coro = himno['chorus']
         # ----------------- Iterar para cada estrofa -----------------
-        estrofas = hymn_book['hymns'][hymn_number-1]['verses']
+        estrofas = himno['verses']
         capital = texto_mayuscula # True for capital, False for lowercase
         if capital:
             estrofas = [estrofa.upper() for estrofa in estrofas]

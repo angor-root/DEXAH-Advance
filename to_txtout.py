@@ -1,8 +1,8 @@
-from pptx import Presentation
+# from pptx import Presentation
 import os
 import json
-from pptx.oxml.ns import nsdecls
-from pptx.oxml import parse_xml
+# from pptx.oxml.ns import nsdecls
+# from pptx.oxml import parse_xml
 import time
 
 def duplicate_slide(pres, slide):
