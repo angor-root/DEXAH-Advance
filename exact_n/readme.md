@@ -1,1 +1,0 @@
-No olvidar quitar las primeras ppts de cada uno, funciona solo para hacer el ultimo chequeo del normalizado.
