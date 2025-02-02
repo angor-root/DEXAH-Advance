@@ -1,4 +1,4 @@
-# DEXAH - Generador de Presentaciones PowerPoint para Himnarios 🎵
+# DEXA Sophos:
 
 ## Descripción
 Herramienta que convierte himnarios en formato JSON a presentaciones PowerPoint, diseñada para servicios religiosos.
